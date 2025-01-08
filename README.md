@@ -7,10 +7,9 @@
 0. [Introduction](#introduction)
 1. [Learning](#learning)
 2. [Getting Started](#getting-started)
-3. [Controls](#controls)
-4. [Authors](#authors)
-5. [About Me](#about-me)
-6. [License](#license)
+3. [Authors](#authors)
+4. [About Me](#about-me)
+5. [License](#license)
 
 ## Introduction
 
