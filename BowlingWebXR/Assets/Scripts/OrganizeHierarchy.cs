@@ -12,8 +12,9 @@ public class HierarchyObjectColor
     // Define the mapping of object names to their colors.
     private static readonly Dictionary<string, (Color backgroundColor, Color textColor)> ObjectColors = new Dictionary<string, (Color, Color)>()
     {
-        { "Gizmos", (new Color(0.2f, 0.6f, 0.1f), Color.white) },
-        { "Environment", (new Color(0.5f, 0.3f, 0.8f), new Color(1f, 1f, 1f)) }
+        { "UI", (new Color(0.15f, 0.4f, 0.8f), Color.white) },
+        { "Gizmos", (new Color(0.15f, 0.5f, 0.08f), Color.white) },
+        { "Environment", (new Color(0.35f, 0.25f, 0.6f), new Color(1f, 1f, 1f)) }
     };
 
     private static readonly Vector2 Offset = new Vector2(20, 1);
