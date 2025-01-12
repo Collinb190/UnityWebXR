@@ -938,6 +938,8 @@ MonoBehaviour:
   forwardForce: 5000
   playerMovement: {fileID: 823928865}
   ballMove: {fileID: 499284509}
+  trap: {fileID: 1779653840}
+  hasLanded: 0
 --- !u!114 &499284509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +953,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &499284514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499284496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0abc923b20ad94ba974807e2ebdffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballRespawn: {fileID: 5196900713360614460}
+  ballForce: {fileID: 499284508}
 --- !u!1 &529254689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8081753785170813420, guid: e1782d30d16f0304890b549e2a537237, type: 3}
@@ -1434,6 +1450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BowlingBall
       objectReference: {fileID: 0}
+    - target: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2706950521658791597, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1498,6 +1518,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 499284509}
+    - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499284514}
   m_SourcePrefab: {fileID: 100100000, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -2550,6 +2573,11 @@ Transform:
   - {fileID: 2108863375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1779653840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2964804123172603212, guid: b1f4372265af110498e712d1588d322f, type: 3}
+  m_PrefabInstance: {fileID: 1904953701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1783185163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,13 +2844,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1027249141400246855, guid: b1f4372265af110498e712d1588d322f, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 2964804123172603212, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_Name
       value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 2964804123172603212, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964804123172603212, guid: b1f4372265af110498e712d1588d322f, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 6771843885391431134, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2834,7 +2870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6771843885391431134, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6771843885391431134, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2863,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 6771843885391431134, guid: b1f4372265af110498e712d1588d322f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175596058273384842, guid: b1f4372265af110498e712d1588d322f, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3287,6 +3327,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!1 &5196900713360614460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5708003511614406242}
+  m_Layer: 0
+  m_Name: BowlingBallRespawn
+  m_TagString: Ball
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5708003511614406242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196900713360614460}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 3.5, z: -21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3302,10 +3373,11 @@ SceneRoots:
   - {fileID: 146373724}
   - {fileID: 537487897}
   - {fileID: 173228322}
+  - {fileID: 1904953701}
   - {fileID: 846596098}
   - {fileID: 1346260585}
-  - {fileID: 1904953701}
   - {fileID: 828223174}
+  - {fileID: 5708003511614406242}
   - {fileID: 823928863}
   - {fileID: 1163221219}
   - {fileID: 1783185167}
