@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 173228319}
   m_Layer: 0
   m_Name: GutterLeft
-  m_TagString: Lane
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,6 +938,7 @@ MonoBehaviour:
   forwardForce: 5000
   playerMovement: {fileID: 823928865}
   ballMove: {fileID: 499284509}
+  ballRespawn: {fileID: 5196900713360614460}
   trap: {fileID: 1779653840}
   hasLanded: 0
 --- !u!114 &499284509
@@ -953,20 +954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &499284514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499284496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0abc923b20ad94ba974807e2ebdffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballRespawn: {fileID: 5196900713360614460}
-  ballForce: {fileID: 499284508}
 --- !u!1 &529254689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8081753785170813420, guid: e1782d30d16f0304890b549e2a537237, type: 3}
@@ -986,7 +973,7 @@ GameObject:
   - component: {fileID: 537487894}
   m_Layer: 0
   m_Name: GutterRight
-  m_TagString: Lane
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1518,9 +1505,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 499284509}
-    - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 499284514}
   m_SourcePrefab: {fileID: 100100000, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
 --- !u!1 &832575517
 GameObject:

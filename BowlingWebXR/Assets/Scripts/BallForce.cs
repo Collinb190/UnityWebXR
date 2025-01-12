@@ -5,9 +5,10 @@ public class BallForce : MonoBehaviour
     public float forwardForce = 5000f; // Adjust this for how fast the ball should roll
     public PlayerMovement playerMovement;
     public BallMove ballMove;
+    public GameObject ballRespawn;
     public GameObject trap;
 
-    public bool hasLanded = false; // To ensure the force is applied only once
+    private bool hasLanded = false; // To ensure the force is applied only once
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -36,6 +37,27 @@ public class BallForce : MonoBehaviour
             playerMovement.enabled = true;
             ballMove.enabled = false;
             trap.SetActive(false);
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            gameObject.transform.position = ballRespawn.transform.position;
+            gameObject.transform.rotation = ballRespawn.transform.rotation;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            hasLanded = false;
+        }
+
+        // Check if the ball hits trap
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            // Disable ball movement and re-enable player movement
+            playerMovement.enabled = true;
+            ballMove.enabled = false;
+            trap.SetActive(false);
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            gameObject.transform.position = ballRespawn.transform.position;
+            gameObject.transform.rotation = ballRespawn.transform.rotation;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            hasLanded = false;
         }
     }
 }
