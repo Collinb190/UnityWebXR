@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 173228319}
   m_Layer: 0
   m_Name: GutterLeft
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -621,7 +621,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93423095}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 478082710}
   m_Layer: 0
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,7 +904,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499284496}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -935,7 +935,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31380c57f88d5cc408cbbc80e3a76851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 10000
+  forwardForce: 5000
+  playerMovement: {fileID: 823928865}
+  ballMove: {fileID: 499284509}
+--- !u!114 &499284509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499284496}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e13b9021ba82114a8345acd0adbe3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &529254689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8081753785170813420, guid: e1782d30d16f0304890b549e2a537237, type: 3}
@@ -955,7 +970,7 @@ GameObject:
   - component: {fileID: 537487894}
   m_Layer: 0
   m_Name: GutterRight
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1243,7 +1258,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654139582}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1469,13 +1484,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 499284501}
-    - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 499284507}
     - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 499284501}
+    - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 499284508}
+    - targetCorrespondingSourceObject: {fileID: 2502024959508335859, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499284509}
   m_SourcePrefab: {fileID: 100100000, guid: 27a7750cfad534b4d8b31b8ef1aa36e1, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -1710,7 +1728,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812599501}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1890,7 +1908,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323151937}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2030,7 +2048,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452093562}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2336,7 +2354,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900363556}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2443,7 +2461,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686775847}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2767,7 +2785,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902920960}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3014,7 +3032,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529254689}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3185,7 +3203,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135517820}
   serializedVersion: 4
-  m_Mass: 0.75
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
