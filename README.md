@@ -1,6 +1,6 @@
 # BowlingWebXR
 
-<img src="images/forReadMe.png" alt="My Image" height="900" width="900"/>
+<img src="images/forReadMe.png" alt="My Image" height="600" width="300"/>
 
 ## Table of Contents
 
