@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+public class BallTrap : MonoBehaviour
 {
     public GameObject ballRespawn;
     public BallForce ballForce;
